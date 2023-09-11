@@ -1,8 +1,8 @@
 package main
 
 import (
-	"github.com/estacet/go_docker/handler"
-	"github.com/estacet/go_docker/server"
+	"github.com/estacet/docker_examples/go/handler"
+	"github.com/estacet/docker_examples/go/server"
 	"log"
 	"net/http"
 )

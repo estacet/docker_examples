@@ -1,3 +1,3 @@
-module github.com/estacet/go_docker
+module github.com/estacet/docker_examples/go
 
 go 1.20
