@@ -1,17 +1,15 @@
-FROM golang:1.21 as builder
+FROM golang:1.21-alpine as build
 
 WORKDIR /app
 
 COPY . .
 
-RUN go build goApp
+RUN go build -o /bin/server .
 
-FROM alpine:latest
+FROM scratch
 
-WORKDIR /app
-
-COPY --from=builder /app/server .
+COPY --from=build /bin/server /bin/server
 
 EXPOSE 8080
 
-CMD ["./server"]
+CMD ["/bin/server"]
